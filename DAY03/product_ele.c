@@ -4,7 +4,7 @@ int main()
     
     int element[20]={0};
     int n=6;
-    int sum=1;
+    int pro=1;
     
     for (int i = 0; i <n; i++)
     {
@@ -13,8 +13,8 @@ int main()
     }
     for (int i = 0; i < n; i++)
     {
-        sum=sum*element[i];
+        pro*=element[i];
     }
-    printf("product of 6 numbers is %d",sum);
+    printf("product of 6 numbers is %d",pro);
     
 }
