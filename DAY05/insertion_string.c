@@ -3,10 +3,10 @@
 
 int main(){
     char arr[100][20];
-    char temp[20];
     int i,j,n;
+    char k[20];
     
-    printf("enter the total size:");
+    printf("enter the size of arr:");
     scanf("%d",&n);
 
 
@@ -15,20 +15,16 @@ int main(){
         printf("enter the string: at M[%d]: ",i);
         scanf(" %s",&arr[i]);
     }
-    //  bubble sort 
-    for ( i = 0; i < n-1; i++)
-    {
-        for (j = 0; j < n-i-1; j++)
+    //  insertion sort 
+    for(i=1;i<n;i++){
+        strcpy(k,arr[i]);
+        j=i-1;
+        while (j>=0&& strcmp(arr[j],k)>0)
         {
-            if (strcmp(arr[j],arr[j+1])>0)
-            {
-                
-            
-            strcpy(temp,arr[j]);
-            strcpy(arr[j],arr[j+1]);
-            strcpy(arr[j+1],temp);
-            }
+            strcpy(arr[j+1],arr[j]);
+            j--;
         }
+        strcpy(arr[j+1],k);
     }
 
     //  print sorted arr
