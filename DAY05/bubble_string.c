@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(){
-    int arr[100]={0};
-    int i,j,n,temp;
+    char arr[100][20];
+    char temp[20];
+    int i,j,n;
     
     printf("enter the total size:");
     scanf("%d",&n);
@@ -11,26 +13,28 @@ int main(){
     for ( i = 0; i < n; i++)
     {
         printf("enter the element: at M[%d]: ",i);
-        scanf("%d",&arr[i]);
+        scanf(" %s",&arr[i]);
     }
     //  bubble sort 
     for ( i = 0; i < n-1; i++)
     {
         for (j = 0; j < n-i-1; j++)
         {
-            if (arr[j]>arr[j+1])
+            if (strcmp(arr[j],arr[j+1])>0)
             {
                 
             
-            temp=arr[j];
-            arr[j]=arr[j+1];
-            arr[j+1]=temp;}
+            strcpy(temp,arr[j]);
+            strcpy(arr[j],arr[j+1]);
+            strcpy(arr[j+1],temp);
+            }
         }
     }
+
     //  print sorted arr
     for ( i = 0; i <n; i++)
     {
-        printf("%d ",arr[i]);
+        printf("%s ",arr[i]);
     }
 
     
