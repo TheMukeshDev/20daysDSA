@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    int arr[100]={0};
+    char arr[100]={0};
     int i,j,n,min,temp;
     
     printf("enter the size of arr:");
@@ -11,7 +11,7 @@ int main(){
     for ( i = 0; i < n; i++)
     {
         printf("enter the element: at M[%d]: ",i);
-        scanf("%d",&arr[i]);
+        scanf(" %c",&arr[i]);
     }
     //  selection sort 
     for ( i = 0; i < n; i++)
@@ -32,7 +32,7 @@ int main(){
     //  print sorted arr
     for ( i = 0; i <n; i++)
     {
-        printf("%d ",arr[i]);
+        printf("%c ",arr[i]);
     }
 
     
