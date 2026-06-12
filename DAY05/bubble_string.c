@@ -9,7 +9,6 @@ int main(){
     printf("enter the total size:");
     scanf("%d",&n);
 
-
     for ( i = 0; i < n; i++)
     {
         printf("enter the string: at M[%d]: ",i);
@@ -27,6 +26,7 @@ int main(){
             strcpy(temp,arr[j]);
             strcpy(arr[j],arr[j+1]);
             strcpy(arr[j+1],temp);
+            
             }
         }
     }
