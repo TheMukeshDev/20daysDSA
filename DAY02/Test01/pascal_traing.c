@@ -18,7 +18,7 @@ int main()
     // 121
     // 1331
     int i ,j,n;
-    printf("enter the valud on n");
+    printf("enter the value on n");
     scanf("%d",&n);
     for (i = 0; i <= n; i++)
     {

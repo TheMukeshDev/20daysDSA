@@ -2,6 +2,7 @@
 #include <string.h>
 
 int main(){
+    
     char arr[100][20];
     int i,j,n;
     int min;
