@@ -1,46 +1,45 @@
 #include <stdio.h>
 #include <string.h>
-
-void merge(char arr[],int low, int mid,int high )
+void merge(char arr[][20],int low, int mid,int high )
 {
     int left ,right,k;
-    char temp[100];
+    char temp[][20];
     left=low;
     right=mid;
     k=low;
     while(left<=mid-1 && right<=high)
     {
-        if (arr[left]<arr[right])
+        if (strcmp(arr[left],arr[right])>0)
 
         {
-         temp[k]=arr[left];
+         strcpy(temp[k],arr[left]);
          left++;   
         }
         else{
-            temp[k]=arr[right];
+            strcpy(temp[k],arr[right]);
             right++;
         }
         k++;
     }
     while (left<mid)
     {
-        temp[k]=arr[left];
+        strcpy(temp[k],arr[left]);
         left++;
         k++;
         
     }
     while(right<=high)
     {
-        temp[k]=arr[right];
+        strcpy(temp[k],arr[right]);
         right++;
         k++;
     }
     for (left=low; left<=high; left++)
     {
-        arr[left]=temp[left];
+        strcpy(arr[left],temp[left]);
     }
 }
-void mergesort(char arr[], int low, int high)
+void mergesort(char arr[][20], int low, int high)
 {
     if(low <high)
     {
@@ -54,16 +53,16 @@ void mergesort(char arr[], int low, int high)
 }
 int main()
 {
-    int size;
+     int size;
     int i;
     printf("enter the size of array: ");
     scanf("%d",&size);
     char arr[size][20];
-    
+   
     printf("enter the %d elements: ",size);
     for ( i = 0; i < size; i++)
     {
-        scanf(" %c",&arr[i]);
+        scanf("%s",&arr[i]);
     }
     int low=0;
     int high=size-1;
@@ -71,7 +70,7 @@ int main()
     mergesort(arr,low,high);
     for ( i = 0; i < size; i++)
     {
-        printf("%c ",arr[i]);
+        printf("%s ",arr[i]);
     }
 
 }
