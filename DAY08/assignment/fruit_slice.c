@@ -53,25 +53,36 @@ void mergesort(char arr[][20], int low, int high)
 }
 int main()
 {
-     int size;
-    int i;
-    printf("enter the size of array: ");
+    int size;
+    printf("Enter the size of array:");
     scanf("%d",&size);
     char arr[size][20];
-   
-    printf("enter the %d elements: ",size);
-    for ( i = 0; i < size; i++)
+    char new_Arr[size*2][20];
+    int i;
+    int k=0;
+    printf("enter the elements");
+
+    for (int i = 0; i < size; i++)
     {
         scanf("%s",&arr[i]);
     }
-    int low=0;
-    int high=size-1;
     
-    mergesort(arr,low,high);
-    printf("sorted arrays:")
-    for ( i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
-        printf("%s ",arr[i]);
+       int len=strlen(arr[i]);
+       int mid=len/2;
+       strncpy(new_Arr[k],arr[i],mid);
+       k++;
+       strcpy(new_Arr[k],arr[i]+mid);
+       k++;
+    }
+    int low=0;
+    int high=size*2-1;
+
+    mergesort(new_Arr,low,high);
+     for (int i = 0; i < size*2; i++)
+    {
+        printf("%s ",new_Arr[i]);
     }
 
 }
