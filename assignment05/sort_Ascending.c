@@ -25,7 +25,7 @@ void posNegSort(int arr[], int n)
 }
 int main()
 {
-    int n=5;
+    int n;
     printf("enter the total size:");
     scanf("%d",&n);
     // int arr[5]={7,2,-3,-1,8};

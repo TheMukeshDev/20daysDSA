@@ -41,16 +41,21 @@ void dequeue()
 
 void display()
 {
-    int i;
-    if (front==-1 ||front>rear)
+    if (front=1)
     {
-        printf("stack is underflow");
+        printf("queue is underflow");
     }
     else
     {
-        for (int i = front ;  i <= rear ; i++)
+        int i=front;
+        while (1)
         {
-            printf("%d  ",queue[i]);
+            printf("%d ",queue[i]);
+            if (i==rear)
+            {
+                break;
+            }
+            i=(i+1)%size;
         }
     }
 }
