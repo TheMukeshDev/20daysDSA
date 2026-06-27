@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 struct Node
 {
-    int data;
+    char data[30];
     struct Node *address;
 };
 void main()
@@ -16,8 +17,8 @@ void main()
     
 
     current= (struct Node *)malloc(sizeof(struct Node));
-    printf("enter the number : ");
-    scanf("%d",&current->data);
+    printf("enter the string : ");
+    scanf("%s",&current->data);
  
 
  
@@ -43,7 +44,7 @@ temp=head;
     {
         
 
-        printf("%d\n",temp->data);
+        printf("%s\n",temp->data);
         temp=temp->address;
 
 }

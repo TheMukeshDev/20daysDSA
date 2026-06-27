@@ -8,7 +8,7 @@ struct Node
 void main()
 {
  struct Node *current=NULL, *head =NULL,*temp;
- int i ,n;
+ int i ,j,n;
  printf("enter the no of elments ");
  scanf("%d",&n);
  for (i = 0; i < n; i++)
@@ -39,12 +39,17 @@ void main()
  }
 temp=head;
     
-    while (temp!=NULL)
+while (temp!=NULL)
     {
         
-
-        printf("%d\n",temp->data);
-        temp=temp->address;
+        if (ptr->data<temp->data)
+        {
+         int j=ptr->data;
+         ptr->data=temp->data;
+         temp->data=j;
+        }
+        ptr=ptr->address;
 
 }
+ temp=temp->address;
 }
